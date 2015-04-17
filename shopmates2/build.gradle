@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.elevenestates.shopmates2"
+        minSdkVersion 14
+        targetSdkVersion 21
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile 'com.balysv:material-ripple:1.0.1'
+    compile 'com.github.Todd-Davies:ProgressWheel:1.0'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.android.gms:play-services:+'
+    compile files('libs/Parse-1.8.0.jar')
+    compile files('libs/ParseCrashReporting-1.8.0.jar')
+    compile files('libs/bolts-android-1.1.4.jar')
+}
